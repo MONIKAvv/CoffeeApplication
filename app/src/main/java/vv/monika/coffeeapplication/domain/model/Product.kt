@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.model
+package vv.monika.coffeeapplication.domain.model
 
 data class Product(
     val id: Int,

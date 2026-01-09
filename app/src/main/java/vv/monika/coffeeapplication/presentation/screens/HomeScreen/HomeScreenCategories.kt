@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.screens.HomeScreen
+package vv.monika.coffeeapplication.presentation.screens.HomeScreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding

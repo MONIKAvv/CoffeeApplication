@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.screens.HomeScreen
+package vv.monika.coffeeapplication.presentation.screens.HomeScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import vv.monika.coffeeapplication.R
-import vv.monika.coffeeapplication.model.Product
-import vv.monika.coffeeapplication.screens.ui_components.MyBottomNavBar
+import vv.monika.coffeeapplication.domain.model.Product
+import vv.monika.coffeeapplication.presentation.ui_components.MyBottomNavBar
 
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
@@ -59,37 +59,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 .padding(16.dp)
                 .padding(innerPadding)
         ) {
-            Text(
-                "Location", color = Color.Gray, fontSize = 14.sp
-            )
-            Spacer(Modifier.height(4.dp))
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    location,
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 16.sp
-                )
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = "Change Location",
-                    tint = Color.White
-                )
-            }
-            Spacer(Modifier.height(40.dp))
-            MySearchBar()
-            Spacer(Modifier.height(40.dp))
-
-            Image(
-                painter = painterResource(R.drawable.banner_1), contentDescription = "Home Banner"
-            )
-            Spacer(Modifier.height(16.dp))
-            HomeScreenCategories()
-
-
 //            displaying products
             val products = listOf(
                 Product(
@@ -132,7 +101,40 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
 
                 )
-            ProductsGrid(products)
+
+            ProductsGrid(products = products) {
+                Text(
+                    "Location", color = Color.Gray, fontSize = 14.sp
+                )
+                Spacer(Modifier.height(4.dp))
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        location,
+                        color = Color.White,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp
+                    )
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = "Change Location",
+                        tint = Color.White
+                    )
+                }
+                Spacer(Modifier.height(40.dp))
+                MySearchBar()
+                Spacer(Modifier.height(40.dp))
+
+                Image(
+                    painter = painterResource(R.drawable.banner_1), contentDescription = "Home Banner"
+                )
+                Spacer(Modifier.height(16.dp))
+                HomeScreenCategories()
+
+
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.screens.HomeScreen
+package vv.monika.coffeeapplication.presentation.screens.HomeScreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import vv.monika.coffeeapplication.R
-import vv.monika.coffeeapplication.ui.theme.LightBrown
+import vv.monika.coffeeapplication.presentation.theme.LightBrown
 
 
 @Composable

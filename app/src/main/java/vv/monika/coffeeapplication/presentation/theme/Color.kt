@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.ui.theme
+package vv.monika.coffeeapplication.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

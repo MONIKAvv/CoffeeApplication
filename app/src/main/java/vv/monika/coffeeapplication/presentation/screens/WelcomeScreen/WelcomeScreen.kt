@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.screens.WelcomeScreen
+package vv.monika.coffeeapplication.presentation.screens.WelcomeScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import vv.monika.coffeeapplication.R
-import vv.monika.coffeeapplication.ui.theme.LightBrown
+import vv.monika.coffeeapplication.presentation.theme.LightBrown
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)

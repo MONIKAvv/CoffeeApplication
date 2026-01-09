@@ -1,4 +1,4 @@
-package vv.monika.coffeeapplication.screens.HomeScreen
+package vv.monika.coffeeapplication.presentation.screens.HomeScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,11 +12,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -29,17 +27,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import vv.monika.coffeeapplication.R
-import vv.monika.coffeeapplication.model.Product
-import vv.monika.coffeeapplication.ui.theme.IvoryWhite
-import vv.monika.coffeeapplication.ui.theme.LightBrown
-import vv.monika.coffeeapplication.ui.theme.LightGray
+import vv.monika.coffeeapplication.domain.model.Product
+import vv.monika.coffeeapplication.presentation.theme.IvoryWhite
+import vv.monika.coffeeapplication.presentation.theme.LightBrown
+import vv.monika.coffeeapplication.presentation.theme.LightGray
 
 //
 //@Preview
@@ -50,7 +46,7 @@ fun ProductCardPreview(
 ) {
 
     Card(
-        modifier = Modifier
+        modifier = modifier
 //            .width(300.dp)
             .fillMaxWidth()
             .padding(8.dp),
@@ -97,7 +93,7 @@ fun ProductCardPreview(
                         painter = painterResource(R.drawable.regular_outline_heart),
                         contentDescription = "Add to Favourite",
                         tint = LightBrown,
-                        modifier = Modifier.size(30.dp)
+                        modifier = Modifier.size(24.dp)
                     )
                 }
 
@@ -105,14 +101,16 @@ fun ProductCardPreview(
             Spacer(Modifier.height(8.dp))
             Text(
                 product.name,
-                style = MaterialTheme.typography.titleMedium,
-                color = Color.Black,
-                fontWeight = FontWeight.SemiBold
+                style = MaterialTheme.typography.titleMedium.copy(
+                    color = Color.Black,
+                    fontWeight = FontWeight.SemiBold
+                ),
+
             )
             Spacer(Modifier.height(4.dp))
             Text(
                 product.description,
-                style = MaterialTheme.typography.titleSmall.copy(
+                style = MaterialTheme.typography.bodySmall.copy(
                     color = Color.Gray
                 ),
                 maxLines = 1,
